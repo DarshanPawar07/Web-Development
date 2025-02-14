@@ -1,0 +1,279 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+:root {
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+
+.wrapper{
+     overflow-x: hidden;
+     overflow-y: auto;
+}
+
+.container{
+  
+  background-image:linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+  font-family: 'Merriweather Sans', sans-serif;
+  padding-top: 20px;
+  width: 100vw;
+  height: 110%;
+  padding-bottom: 150px;
+  color: var(--colorLight2);
+
+}
+
+
+/* tab container */
+
+.tab{
+  font-size: 0.875rem;
+  letter-spacing:1.75px;
+  padding: 5px 8px;
+  
+}
+
+
+/* a) current tab*/
+.tab.current-tab
+  {
+    background-color: rgba(219, 226, 239, 0.5);
+    padding:3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius:5px;
+  }
+
+.card1{
+    place-self: center;
+    font-size:40px;
+    color:var(--colorLight2) ;
+    font-weight: bold;
+
+}
+
+.tab-container{
+    /*w-[549px] place-self-center mt-[97px] flex flex-row justify-between*/
+    width: 90%;
+    max-width: 550px;
+    place-self: center;
+    margin-top: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+}
+
+ /* Grant location Div */
+
+ .locationn{ 
+    place-self: center;
+     width: 400px;
+     scale: 0;
+     margin-top: 40px;
+     place-items: center;
+     display: flex;
+     flex-direction: column;
+   
+}
+
+  .heading1{
+     font-size: 1.75rem;
+     font-weight:600;
+
+    
+  }
+
+  .para1{
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+     
+  }
+
+  .button1{
+      color: white;
+      background-color: var(--colorDark2);
+      border-radius: 5px;
+      padding: 9px;
+      width: 150px;
+      font-size: 14px;
+      font-weight:600;
+      margin-bottom: 10px;
+  }
+
+  /* loader*/
+
+   .loading_container{
+       place-self: center;
+   }
+
+   .lText{
+      text-transform: uppercase;
+      place-self: center;
+      font-size:18px;
+      margin-top: -10px;
+    
+   }
+
+
+  /* Information div */
+
+  .information{
+  
+     margin-top: -130px;
+     display: flex;
+     flex-direction: column;
+     color: white;
+     place-self: center;
+     scale: 0;
+     
+     place-items: center;
+ }
+
+ .name{
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  gap: 0 0.5rem;
+  margin-bottom: 1rem;
+}
+
+
+  .w_info{
+      place-items: center;
+  }
+
+  .city_name{
+    font-size:2rem;
+  }
+
+  /* country image*/
+  .flag{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    
+  }
+
+  .weather_name{
+       font-size:1.5rem;
+       font-weight: 200;
+
+   } 
+
+ .weather_name_img{
+       width: 90px;
+       height: 90px;
+ }
+
+ .temp{
+     font-size:2.75rem;
+     font-weight:700;
+     
+   }
+
+.cards{
+    
+     display: flex;
+     gap:10px 20px;
+     color: white;
+     margin-top:2rem;
+   
+}
+
+.each_card{
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 5%;
+    width: 195px;
+    height: 145px;
+    place-items: center;
+    font-size:x-large;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    
+  }
+  
+  /* loading wala GIF*/
+   
+.loading_container{
+       scale: 0;
+ }
+
+  /* search_weather  section*/
+
+  .search_city_bar{
+    place-self: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: -15rem;
+   /*background-image:linear-gradient(160deg, #112d4e 0%, #3f72af 100%);*/
+    display: flex;
+    scale: 0;
+    gap: 15px;
+    
+}
+
+  .heading2{
+     all: unset;
+     width: 500px;
+     height: 40px;
+     background-color: rgba(219, 226, 239, 0.5);
+     border-radius: 10px;
+     color: white;
+     font-weight: 500;
+     padding-left: 16px;
+      
+}
+
+.sclass input:focus
+     {
+        outline: 3px solid rgba(255, 255, 255, 0.7);
+     }
+
+.heading2::placeholder{
+    color: rgba(219, 226, 239, 0.95);
+}
+
+  .sclass{
+   
+      border-radius: 20%;
+      place-self: center;
+  }
+
+  .searchbtn{
+      
+     background: var(--colorDark2);
+      border-radius: 50%;
+      width: 40px;
+      place-self:center;
+      padding: 10px;
+
+  }
+
+  .search_weather{
+    display: flex;
+    
+  }
+
+  /* classes to show and remove sections*/
+  .activeclass{
+    scale: 1;
+  }
+
+ .mt{
+   margin-top: -200px;
+ }
+
