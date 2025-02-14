@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer"
+      >
+
+      
+</head>
+
+
+<body>
+      
+       <div class="wrapper min-h-[100vh] gap-5 max-w-[220vh]  flex flex-col bg-[linear-gradient(231deg,_rgba(22,_6,_40,_1)_0%,_rgba(52,_28,_79,_1)_50%,_rgba(88,_7,_125,_1)_100%)] place-items-center place-content-center ">
+               
+               <div class="text-[1.9rem] text-[hsl(0,0%,100%)] opacity-70 font-semibold ">
+                    PASSWORD GENERATOR
+               </div>
+
+               <div class=" bg-[hsl(268,75%,9%)] w-[450px] h-[80px] flex justify-between p-5 border-b-[5px] rounded-xl border-purple-800 ">
+                            
+                           <input readonly placeholder="PASSWORD"  class=" placeholder:text-[hsl(52,100%,62%)] placeholder:font-bold placeholder:text-[1.45rem] placeholder:opacity-60 display bg-transparent text-[hsl(52,100%,62%)] text-xl font-semibold border-none " data-passwordDisplay >
+
+                          <!-- readonly isiliye kyunki input tag mei hum write bhi kr skte hai HTML page ke through but idhar humei kuch write nhi krna hai bs password display karana hai  -->
+                          <!-- data-passwordDisplay aisi cheezo ko kehete hai custom attribute iske through aap queryselector mei aap agar custom attribute ka naam daal doge to apne aap is tag ka data query selector mei fetch ho jayega  -->
+                    
+                       
+                            <button data-copy class=" text-[hsl(52,100%,62%)]">
+                                 <span data-copy-msg></span>  <!--data-copy-msg is a custom attribute -->
+                                 <img src="./copy.svg" alt="copy" width="24" height="24">
+                            </button>
+               </div>
+
+               <div class="bg-[hsl(268,75%,9%)] w-[450px]  p-8  rounded-xl  border-b-[5px]  border-purple-800 ">
+                           
+                         <!-- Password Length section-->
+                        <div class="flex justify-between length-container">
+                                  <p class="text-[1.4rem] text-white" > Password Length</p> 
+                                  <p data-length-number class="text-[hsl(52,100%,62%)] font-bold text-[1.4rem]">0</p>
+                        </div>
+                         
+                        <!-- Slider-->
+                        <input type="range" min="1" max="20" class="  slider mt-6 mb-1 w-full bg-purple-700 hover:cursor-pointer" data-lengthSlider >  <!-- data-lengthSlider is a custom attribute-->
+                          `
+                        <!-- Checkboxes-->
+                        <div class="gap-[14px] text-white text-[20px]  border-[hsl(177,92%,70%)]">
+
+                            <form class="mt-2">
+                                 <input id="uppercase" type="checkbox">
+                                 <label for="uppercase">Includes Uppercase Letters</label>
+                            </form>
+
+                            <form class="mt-2">
+                                 <input id="lowercase" type="checkbox">
+                                 <label for="lowercase">Includes Lowercase Letters</label>
+                            </form>
+
+                            <form class="mt-2">
+                                <input id="numbers" type="checkbox">
+                                <label for="numbers">Includes Numbers</label>
+                            </form>
+
+                            <form class="mt-2">
+                               <input id="symbols" type="checkbox">
+                               <label for="symbols">Includes Symbols</label>
+                            </form>
+ 
+                        </div>
+
+                        <!-- strength section-->
+                        <div class="text-white text-[21px] mt-3 flex justify-between strength-container">
+
+                               <p> Strength</p>
+                               <div class="h-6 w-6  rounded-full place-self-center" data-indicator> </div>
+                              <!-- since ye jo circle hai uska color change ho raha hai on the basis of how strong the password is mtlb is div/circle ke color ko change krna hai to vo change hoga how the strong password is aur password 
+                                   kitna strong hai vo javascript se apata lagega therefore isdiv ke color ko javascript se change 
+                                   krna hoga isliye isko humne data-indicator naam ka custom attribute diya taaki is custom attribute se hum queryselector ki 
+                                   madat se iska color change kr paaye
+                              -->
+
+                        </div>  
+                      
+                         <button class="bg-[hsl(285,91%,52%)] w-[100%] place-self-center place-items-center p-3 mt-5 text-[hsl(52,100%,62%)] text-xl font-bold border-b-4 border-[hsl(52,100%,62%)] rounded-xl generate-button">
+                                GENERATE PASSWORD
+                         </button>
+
+               </div>
+
+       </div>
+
+       <script src="index.js"></script>
+</body>
+</html>
