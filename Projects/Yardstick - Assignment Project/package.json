@@ -1,0 +1,29 @@
+{
+    "name": "personal-finance",
+    "version": "1.0.0",
+    "description": "A simple web application for tracking personal finances",
+    "main": "index.js",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "export": "next export"
+    },
+    "dependencies": {
+        "mongoose": "^6.13.8",
+        "next": "13.x.x",
+        "react": "18.x.x",
+        "react-dom": "18.x.x",
+        "react-hook-form": "^7.54.2",
+        "recharts": "^2.15.1"
+    },
+    "devDependencies": {
+        "eslint": "^8.x.x",
+        "eslint-config-next": "^12.x.x"
+    },
+    "author": "",
+    "license": "ISC"
+}
+
+
+ 
