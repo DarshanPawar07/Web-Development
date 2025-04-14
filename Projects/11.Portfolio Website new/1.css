@@ -1,0 +1,895 @@
+
+@import url("https://fonts.googleapis.com/css?family=Be+Vietnam+Pro:wght@300&display swap");
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Be Vietnam Pro", sans-serif;
+}
+
+:root{
+    --bgOrange:#e84949;
+}
+
+                                           /* --- All properties of HEADER --- */
+
+#wrapper{
+
+      height: 100vh;
+      width: 100vw;
+      overflow-y: auto;
+      overflow-x: hidden;
+}
+
+.container{ 
+    width: 1200px;   /* kyunki container mei navbar aur intro frame ye dono section
+                        aane wale hai aur in dono section ki width 100% nhi hai balki inki 
+                        width 1200px he hai bs ek baar inspect element krke dekh*/
+    margin: 0 auto;
+}
+
+
+.navbar{
+        
+     display: flex;   
+     justify-content: space-between; 
+     align-items: center;   
+     padding-top: 1rem; 
+
+}
+
+.nameimg{
+          width: 80px;
+   }
+
+.nametext{
+    color: black;
+     display: flex;   
+     align-items: center;
+     justify-content: baseline;   
+     
+}
+
+.logotxt{
+      
+        font-size: 32px;
+        font-weight: bold;
+   
+}
+
+.hyperlinks{
+     
+         display: flex;
+         gap:10px; 
+         padding:0 4em; 
+         scroll-behavior: smooth;
+}
+
+
+
+.hyperlinks div {       
+   
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.hyperlinks div a{       
+      color: black;
+}
+
+a{
+    text-decoration: none; 
+}
+
+.hyperlinks div:hover{
+      transition:  0.4s; 
+      font-weight: bold;  
+}
+
+                                           /* --- All properties of INTRO FRAME --- */
+
+
+.introframe{
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+           
+          gap: 5rem;
+          margin: 4rem auto;
+          padding: 0 1rem;
+          padding-bottom: 8rem;
+}
+
+.faded-text{
+        
+    user-select: none;   /* vo text select naa ho paaye*/
+    font-size: 6em;
+    color: rgb(231,231, 231);
+    position: absolute;
+    bottom: -16%;
+    left: -1%;
+    font-weight: lighter ;
+    transition: all 3s;
+
+
+}
+
+.hero-section-left{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+}
+
+.hero-section-heading{
+      /*  given by user*/
+        font-size: 35px;
+        color:#343d68;
+        font-weight: 500;
+}
+
+.role{
+    /*  given by user*/
+      color: #4e45d5;
+      font-weight: 800;  
+}
+
+.hero-section-heading {
+      /*  given by user*/
+      font-size: 45px;
+      line-height: 45px;
+}
+
+.hero-section-description{
+      /*  given by user*/
+      margin-top: 1rem;
+      width: 80%;
+      font-weight: 500;
+      font-size:20px;
+}
+
+.intro1{
+    color:#4e45d5; 
+ }
+
+ .share-btn{
+      display: flex;
+      gap: 15px;
+      align-items: center;
+ }
+
+ .linkedin1{
+    transition: all 0.3s;
+    color: #0a66c2;
+ }
+
+ .linkedin2{
+    transition: all 0.3s;
+    color:black ;
+ }
+
+ :hover.linkedin{
+          transform: scale(1.2);
+     }
+
+.hire{
+    
+    background-color: var(--bgOrange);
+    font-size: 18px;
+    color: white;
+    height: 50px;
+    width: 140px;
+    padding:6px 14px 10px 11px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+     z-index: 0;
+     box-shadow: 5px 5px 7px 0px #0000003f;
+     cursor: pointer;
+     border: solid 2px transparent;
+     border-radius: 20px;
+}
+
+.hire::before{
+    content: "";
+    background-color: #fff;
+   
+    transform:scaleX(0);
+  
+    transform-origin: left;  /*most important*/
+    transition: all 0.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 20px;
+  
+}
+
+.hire:hover::before{
+    transform: scaleX(1);
+    border-radius: 20px;
+   
+}
+
+.hire:hover{
+       color: black;
+      transform: scale(1.1);
+
+}
+
+.hero-section-right{
+        position: relative;
+
+}
+
+.absolute{
+    position: absolute;
+}
+
+.user-image{
+    padding:2.5rem;   /* photo ke baaju mei jo patti hai white color ki to vo create krne ke liye padding apply ki*/
+    filter: grayscale(1);
+    
+    /* jab image full size ki hai to vo greyscale ki ho jaati hai aur jab ye image  aur jab choti hoti tab vo original color mei aa jati hai*/
+     transition: all 1s;   
+     animation: scaleimage 5s linear infinite;
+
+}
+
+.user-image img{
+       /* jo user ki image hai humei uske upar vo jo kuch kuch decorative items hai na jaise fdots vagera to vo iss user image 
+        ke uapr chahiye to mujhe user image ko un decoraative items ke neeche place krna hoga */
+      z-index: -5;
+}
+
+@keyframes scaleimage {
+
+      0%{   
+          filter: grayscale(0);
+          transform: scale(1);
+      }
+
+      50%{
+         filter: grayscale(1);
+         transform: scale(1.1);
+         box-shadow: 3px 3px 10px black;
+      }
+
+      100%{
+        filter: grayscale(0);
+        transform: scale(1);
+      }
+}
+
+.icon-dot{
+   
+    z-index: 9;   /* taaki vo dots us image ke upar aa sake*/
+    animation: dotanimation;
+  
+    /* given by designer*/
+    bottom: -1rem;
+    right: 0;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dotanimation{
+      0%{
+        transform: translateY(0px); /* 0 % pe uski kuch bhi movement nhi hoyi hogi*/
+      }    
+
+      50%{
+        transform: translateY(-15px); /* 50 % pe vo neech chala gaya*/
+      }
+
+      100%{
+        transform: translateY(0px); /* 100 % pe uski kuch bhi movement nhi hoyi hogi*/
+      }
+}
+
+.icon-cube{
+   
+    z-index: 9;  
+    animation-name: cubeanimation;
+  
+    /* given by designer*/
+    top: -0.4em;
+    right: 0.4em;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cubeanimation{
+    /* ab ye cube rotate bhi kr rha ha9i aur y axis mei move bhi kr rha hai aur vo rotation y axis mei kr rha hai*/
+      0%{
+        transform: rotateY(0deg) translateY(0px); 
+       
+    }    
+
+      50%{
+        transform: rotateY(180deg)  translateY(-12px); 
+    }
+
+      100%{
+        transform: rotateY(360deg) translateY(0px); 
+    }
+}
+
+
+.icon-circle{
+   
+    z-index: 9;  
+    animation-name: circleanimation;
+  
+    /* given by designer*/
+    bottom: 0;
+    left: 0;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes circleanimation{
+      0%{
+          left: -1rem;
+          bottom: -1rem;
+    
+       }    
+
+      50%{
+             left: 4%;
+             bottom: 6%;
+      }
+
+      100%{
+         left: -1rem;
+         bottom: -1rem;
+      }
+
+ }
+
+ .icon-zigzag{
+   
+    z-index: 9;  
+    animation-name: circleanimation;
+  
+    /* given by designer*/
+    top: 1rem;
+    left: -0.3rem;
+  animation:zigzaganimation 3s ease-in infinite;
+ 
+}
+
+@keyframes zigzaganimation{
+      0%{
+          left: -1rem;
+          bottom: 0;
+    
+       }    
+
+      50%{
+         left: 3%;
+           top: 1%;
+      }
+
+      100%{
+         left:-1rem;
+         bottom: 0;
+      }
+
+ }
+
+ .icon-plus{
+   
+    z-index: 9;   
+    animation-name: circleanimation;
+  
+    /* given by designer*/
+    top: 0.2rem;
+    left: 50%;
+    animation:plusanimation 5s ease-in infinite;
+   
+
+}
+
+@keyframes plusanimationanimation{
+      0%{
+          left: 0;
+          bottom: 0;
+    
+       }    
+
+      50%{
+         left: 48%;
+           top: 3%;
+      }
+
+      100%{
+         left:-1rem;
+         bottom: 0;
+      }
+
+ }
+
+
+
+ /* project section*/
+
+.project-section{
+     
+       background-color:rgb(231, 231, 231) ;
+       margin-top: 4rem;
+       height:max-content;
+  }
+
+.page-header{
+        color: var(--bgOrange);
+        font-size: 70px;
+        text-align: center;
+        padding-top: 30px;
+}
+
+.project-container{
+        
+           /* sabhi cards store krne ke liye humne ek container banayahai jo ki project container
+            hai aur aap dekhoge ki project card hai uski koi specific width hai jo ki sirf 1200px hai 
+            aur since hum sabhi cards ek he issi container  mei daalne wale hai to 
+            iss container ki height == height of card1 + height of card2 + height of card3 + height of card4
+             ye dekhne ke liye inspect element krke dekho*/
+
+         max-width: 1200px;
+         margin: 0 auto;  /*kyunki humei centre mei card place krna hai isiliye*/
+         padding: 3rem 0;
+         display: flex;   /* since iss container ke andar ke elements ek ke niche ek place krne hai to humnei isse flex bana diya*/
+
+         flex-direction: column;  /* isse sab cards ek ke niche ek place hote jayenge*/
+         gap: 120px;  /* 2 cards ke beech itna gap chahiye*/
+
+}
+
+.project-card{
+
+       height:400px ;  
+       width: 100%; /* card ne poore container ki width kha li thi lekin actucal meicard aur container ke beech thoda spacing hai*/
+       background-size: cover; /* taaki vo background image poore background ke hissab se fit ho jaaye*/
+     /*  background-repeat:no-repeat ;*/
+       position: relative;  /* kyunki us image ke upar mujhe text overlay karana hai to mei us text ko absolute kr dunga*/
+       box-shadow: 0px 0px 40px  #1f1f1f;
+       overflow: hidden; /* Ensures the image doesn't overflow the div */
+
+
+   }
+
+#project1{
+    background-image: url(./Website/Projects/Project1.png);
+       /* Ensure the image takes full width of the div */
+           /* Ensure the image takes full height of the div */
+ 
+    
+}
+
+#project2{
+    background-image: url(./Website/Projects/Project2.png);
+}
+#project3{
+    background-image: url(./Website/Projects/Project3.png);
+}
+#project4{
+    background-image: url(./Website/Projects/Project4.png);
+}
+
+#project5{
+    background-image: url(./Website/Projects/tic-tac-toe-game.png);
+}
+    .project-card::after{   
+        /* ye after specifically isiliye use kiya hai kynuki uss background image ke upar mujhe ke black tini chahiye*/
+       
+        content: "";
+        position: absolute;
+
+      /* ye top,left,right ,bottom isiliye taaki vo black tini color hai vo poore card ko occpy kr le*/
+        top:0;
+        left: 0;    
+        bottom: 0;
+        right: 0;
+        
+        background-color: #1f1f1f9a;  /* image ke upr ek black tint color hai image poori white nhi hai to uske liye hum ye karenge jaise car ki kaanch ke upar ek kaaali layer hoti hai waise*/
+        /*transform: scaleX(1);*/
+        z-index: 0;
+ }
+
+ .project-card::before{   /* mujhe vo filter wala effect chahiye vo blue color ki running slide chahiye*/
+         
+    content: "";
+    position: absolute; /* kyunki vo  filter  card ke upar aani chahiye*/
+ 
+        /* ye top,left,right ,bottom isiliye taaki vo blue color ki slide color hai vo poore card ko occpy kr le*/
+         top:0;
+         left: 0;    
+         bottom: 0;
+         right: 0;
+         background-color:#ffffff;/*linear-gradient(45deg,#343d68,#343d68be,#343d687c);*/
+         opacity: 25%;
+         /* since mujhe normal condition mei vo blue color ki slide normal condition mei nhi chahiye bas hover krne par aana chahiye isliye we use scalE*/
+         transform: scaleX(0);
+         transform-origin: left ;
+         transition: all 0.4s;
+         z-index: 1;
+    }
+
+
+ .project-card:hover::before{
+    transform: scaleX(1);
+ }
+
+ .project-number{
+          
+        position: absolute;
+        font-size: 120px;
+        font-weight: 600;
+        color: white;
+        opacity: 80%;
+        z-index: 10;
+        display: none; /*  display: none; card par project number usual condition par nhi dikhna chahiye sirf hover krne par he dikhna chahiye to isiliye noremal condtion mei none kr diya aur ab niche hover waali condition mei visible likh dunga to vo dikhne lagega*/
+
+ }
+
+ .project-card:hover .project-number{
+    display:block;  /* isse jo project number dikh nhi raha tha ab hover krne par vo dikhne lagega*/
+ }
+
+ .project-number-right{
+      right: 4px;
+      top: -18px;
+
+ }
+
+ .project-number-left{
+   left: 8px;
+    top: -20px;
+
+}
+
+.project-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 2em;
+    top:27px;
+    z-index: 5;
+    gap: 1em;
+    transition: all 0.4s;
+    width: 800px;
+   
+}
+
+.project-content-left{
+    left: 6%;
+    
+}
+
+.project-content-right{
+    right:-17%;
+    
+}
+
+.project-skills-container{
+
+          width: 60%;
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+        /* transition: ;*/
+}
+
+.project-skill{
+         width: 40px;
+}
+
+
+.project-heading{
+    font-size:45px ;
+    font-weight: 600;
+    line-height: 3rem;
+
+}
+
+.project-subHeading{
+    width: 70%;
+    font-size: 16px;
+    font-style: italic;
+
+}
+
+.btn-grp{
+    /* since humei in sabhi buttons ko single line mei chahiye aur unmeikuch gap chaiye*/
+    display: flex;
+    align-items: center;
+    gap:0.5rem ;
+    
+    
+}
+
+.btn-project:hover{
+    border: none;
+
+}
+
+.icon{
+    cursor: pointer;
+    color: white;
+    font-size: 35px;/* github aur links wala icon ka size*/
+    transition:all 0.4s;
+
+}
+
+.icon:hover{
+     color: var(--bgOrange);
+ }
+
+ .project-card:hover .project-content{
+    transform: scale(1.1);
+ }
+
+.live-btn{
+    height: 14px;
+    width: 14px;
+    background: #03C03C;
+    border-radius: 10px;
+    box-shadow:0px 0px 12px 1px #03C03C;
+    margin-right: 9px;
+    place-self: center;
+  
+}
+  
+
+  /* form section*/  
+
+.forrm{
+    background-color:rgb(231, 231, 231) ;
+}
+
+ .form1{
+       /* background: yellow;*/
+        place-self: center;
+         width: 1000px;
+         padding-bottom: 40px;
+        
+ 
+ }
+ 
+ .fheading{
+    color: #e84949;
+    font: bold;
+   font-size: 2.45rem;
+ }
+ 
+ .fsub-heading{
+        
+       color:#5b617e;
+       font-weight:bolder;
+       text-transform: capitalize;
+       color: #343d68aa;
+       font-size: 1.23rem;
+ }
+ 
+ .fitem{
+       padding-top: 15px;
+        display: flex;
+       justify-self: center; 
+       
+ }
+ 
+ .ftext{
+
+      width:100%;
+      height: 42px;
+      border-radius:5px;
+       border: none;
+       margin-top: 23px;
+       margin-bottom: 8px;
+       box-shadow: 2px 2px 10px #1f1f1f;
+       background: #ffffff97;
+       padding: 0 2rem;
+       font-size: 18px;
+       font-weight: 500;
+       
+ }
+
+ .fmsg{
+     height: auto;
+     padding-top: 1rem;
+ }
+
+ .snd-msg-btn{
+    margin-top: 40px;
+    place-self: center;
+    width: 170px;
+     
+     
+ }
+
+ .snd-msg-btn:hover{
+    scale: 0.9; 
+ }
+
+
+/* tech stack section*/
+
+.blob{
+    position: relative;
+    z-index: -1;
+  margin-top: -40px;
+  margin-left: 400px ;
+  animation: blobAnimate 3s linear infinite;
+}
+
+@keyframes blobAnimate {
+    
+    0%{
+        left: 0%;
+    }
+    50% {
+        left: 4%;
+    }
+    100%{
+        left: 0%;
+    }
+
+  }
+
+  .ts-content{
+      color: #e84949;
+      font-weight: bolder;
+   
+  }
+
+.skills-content{
+       z-index: 5;
+}
+
+.ts-section{
+    width: 1200px;
+    place-self: center;
+    margin-bottom: -90px;
+}
+
+.s-heading{
+     font-size: 30px;
+     font: bold;
+     color: #e84949;
+    padding-top: 30px;
+}
+
+.m-text{
+    font-size: 60px;
+}
+ 
+.skills-logo{
+    width: 50px;
+    transition: all 0.5s;
+    margin-left: 30px;
+
+}
+
+.slogos{
+    position: relative;
+   top: -200px;
+   place-self: center;
+}
+
+.skills-logo:hover{
+    scale: 1.2;
+}
+
+.img-skills{
+    
+    gap: 45px;
+}
+ /* footer section*/
+
+ .footer{
+    background-color: #343d68;
+    display: flex;
+    justify-content: center;
+    
+      gap: 15px;
+      padding-top:  35px;
+      padding-bottom:45px; 
+      scroll-behavior: smooth;
+ }
+
+ .textf{
+    color: white;
+ }
+
+ .textf:hover{
+    transition: text 1s;
+    cursor: pointer;
+    color: #e84949;
+ }
+
+
+ /* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+      padding: 0 1rem;
+    }
+  
+    header, footer {
+      text-align: center;
+      padding: 1rem;
+    }
+  
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+  
+    .feature {
+      width: 100%;
+      max-width: 90%;
+      box-sizing: border-box;
+    }
+  
+    main {
+      padding: 1rem 0;
+    }
+  
+    .intro {
+      padding: 0 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.5rem;
+    }
+  
+    .feature h3 {
+      font-size: 1.2rem;
+    }
+  
+    .feature p {
+      font-size: 1rem;
+    }
+  }
+  
+/*
+
+
+.frame{
+    height: 1000px;
+    background-color: green;
+    
+    
+   
+}
+
+.photoframe{
+    background-color: blueviolet;
+    height: 90px;
+    width: 30px;
+}
+
+
+
+
+
+                   /* --- All properties of PROJECTS --- */
+
+
+                  
