@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Weather App</title>
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-[linear-gradient(160deg,_#112d4e_0%,_#3f72af_100%)] flex items-center justify-center"></body>
+
+
+    <div class="wrapper px-4 w-full max-w-full sm:max-w-[600px] mx-auto ">
+          
+           <div class="container">
+                   
+                 <div class="card1 ">WEATHER APP</div>
+
+                 <div class="tab-container">
+                      
+                         <!-- Your Weather section-->
+                         <button class="ur_weather_card tab" data-userWeather>Your Weather</button>
+                        
+                         <!-- Search Weather section -->
+                         <button class="search_weather_btn tab" data-searchWeather>Search Weather</button>
+
+                </div>    
+
+                   <div class="weather-container">
+
+                           <!-- Grant location Div-->
+                           <div class= "locationn">
+                                <img src="images/location.png" width="80px" alt="" style="margin-bottom:2rem;" loading="lazy">
+                                <h1 class="heading1 text-xl sm:text-2xl md:text-3xl">Grant Location Access</h1>
+                                <p class="para1">Allow Access To Get Weather Information</p>
+                                <button class="button1" data-grantAccess>GRANT ACCESS</button>  
+                                <!-- agar session storage mei location(coordinates) ki info hai to mei direct weather info dikha dunga 
+                                      agar session storage mei location(coordinates) ki info nhi hai to mei grant access waali screen display karaunga -->
+
+                 
+                           </div>
+
+                          <!-- search city bar -->
+                          <form class="search_city_bar w-full max-w-md mx-auto px-4 flex flex-col sm:flex-row gap-3 sm:gap-2 items-center">
+               
+                              <div class="sclass">
+                                   <input class="heading2 w-full sm:w-80 px-4 py-2 text-base sm:text-lg rounded-md border border-gray-300"  placeholder="Search For City..." data-search_City></input>
+                             </div>
+
+                             <button type="submit" >
+                                 <img class="searchbtn"  src="./images/search.png" alt="" loading="lazy">
+                            </button>
+
+                          </form>                          
+
+                          <!-- loading wala GIF-->
+                           <div class="loading_container">
+                                <img src="./images/loading.gif" class="w-[120px] md:w-[150px]" alt="">
+                                <p class="lText">Loading</p>
+                           </div>
+
+                          <!-- information-->
+                          <div class="information"> 
+                        
+                               
+                                     <div class="name">
+                                            <p class="city_name" data-cityName></p>
+                                            <img src="" alt="" class="flag"  data-countryIcon>
+                                      </div>
+
+                                      <div class="weather_name" data-weatherDesc></div>
+                                      
+                                      <div>
+                                        <img class="weather_name_img" data-weatherIcon src="" width="90px"  alt="">
+                                    </div>
+
+                                     <div class="temp" data-temp></div>
+
+                                 
+
+                                <div class="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+
+                                     <div class="windspeed each_card">
+                                         <img src="./images/wind.png" class="w-[40px] md:w-[50px]" alt="">                               
+                                         <h1>WINDSPEED</h1>
+                                         <h1 class="wind_value" data-windSpeed></h1>
+                                     </div>
+
+                                    <div class="HUMIDITY each_card">
+                                           <img src="./images/humidity.png" alt="" class="w-[40px] md:w-[50px]" >  
+                                         <h1> HUMIDITY</h1> 
+                                         <h1 class="humidity_value"  data-humidity></h1>
+
+                                    </div>
+                             
+                                    <div class="CLOUDS each_card">
+                                          <img src="./images/cloud.png" alt="" class="w-[40px] md:w-[50px]"> 
+                                          <h1>CLOUDS</h1> 
+                                         <h1 class="clouds_value"  data-cloudiness></h1>
+                                    </div>
+                             
+                                </div>
+                          </div>   
+
+ 
+                   </div>
+
+          </div>
+   </div>                
+
+
+</body>
+<script src="index.js"></script>
+</html>
